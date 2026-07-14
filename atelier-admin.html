@@ -181,7 +181,7 @@ layout: null
         <!-- Main Content Area -->
         <main class="flex-1 overflow-y-auto bg-surface-container-lowest">
             <!-- Header -->
-            <header class="sticky top-0 z-10 flex items-center justify-between px-margin-desktop py-6 bg-surface-container-lowest/80 backdrop-blur-md">
+            <header class="sticky top-0 z-10 flex items-center justify-between px-margin-mobile md:px-margin-desktop py-6 bg-surface-container-lowest/80 backdrop-blur-md border-b border-outline-variant/20">
                 <div>
                     <h2 class="font-display-lg text-headline-sm text-primary">Tableau de Bord Administrateur</h2>
                     <p class="font-body-md text-on-surface-variant text-sm">Bon retour. Affichage des performances de l'atelier pour l'exercice 2026.</p>
@@ -194,13 +194,16 @@ layout: null
                         <span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary cursor-pointer transition-colors" data-icon="notifications">notifications</span>
                         <span class="absolute top-0 right-0 w-2 h-2 bg-secondary rounded-full"></span>
                     </div>
-                    <button class="px-6 py-3 bg-primary text-on-primary font-label-caps text-[10px] tracking-widest hover:bg-on-primary-fixed transition-colors">
+                    <a href="index.html" class="md:hidden flex items-center justify-center p-2 border border-outline-variant text-secondary hover:bg-secondary/5 rounded" title="Retour au site public">
+                        <span class="material-symbols-outlined">arrow_back</span>
+                    </a>
+                    <button class="hidden md:block px-6 py-3 bg-primary text-on-primary font-label-caps text-[10px] tracking-widest hover:bg-on-primary-fixed transition-colors">
                         NOUVELLE COLLECTION
                     </button>
                 </div>
             </header>
 
-            <div class="px-margin-desktop pb-section-gap">
+            <div class="px-margin-mobile md:px-margin-desktop pb-section-gap">
                 <!-- KPI Section -->
                 <section class="grid grid-cols-1 md:grid-cols-3 gap-gutter mt-8">
                     <!-- KPI 1 -->
@@ -366,7 +369,7 @@ layout: null
                 </section>
             </div>
             <!-- Minimal Footer -->
-            <footer class="px-margin-desktop py-8 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center bg-surface-container-lowest">
+            <footer class="px-margin-mobile md:px-margin-desktop py-8 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center bg-surface-container-lowest">
                 <span class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest">© 2026 MAS Stylisme. Tous droits réservés. Réalisé par <a href="http://www.rejustewenoumi.com" target="_blank" class="hover:underline">Rejuste WENOUMI</a></span>
                 <div class="flex gap-8 mt-4 md:mt-0">
                     <a class="font-label-caps text-[10px] text-on-surface-variant hover:text-primary transition-colors" href="#">Confidentialité</a>
