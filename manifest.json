@@ -1,0 +1,16 @@
+{
+  "name": "MAS Stylisme",
+  "short_name": "MAS",
+  "description": "Maison de Haute Couture & Art Tailleur Béninois",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#fff8f6",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "assets/app_showcase_mockup.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

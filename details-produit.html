@@ -1,0 +1,397 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html class="light" lang="fr">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>MAS Stylisme | Blazer en Laine Sculpté</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <!-- Tailwind Config Verbatim -->
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "inverse-primary": "#c6c6c6",
+              "on-primary-fixed-variant": "#474747",
+              "surface-container-highest": "#e9e1de",
+              "on-primary-fixed": "#1b1b1b",
+              "outline-variant": "#cfc4c5",
+              "secondary-container": "#fed65b",
+              "on-secondary-fixed": "#241a00",
+              "error": "#ba1a1a",
+              "surface-container-high": "#efe6e4",
+              "secondary": "#735c00",
+              "surface-bright": "#fff8f6",
+              "on-error": "#ffffff",
+              "inverse-surface": "#342f2e",
+              "on-surface-variant": "#4c4546",
+              "tertiary-fixed-dim": "#c8c8b0",
+              "primary-fixed": "#e2e2e2",
+              "tertiary-container": "#1b1d0e",
+              "on-secondary-fixed-variant": "#574500",
+              "inverse-on-surface": "#f8efec",
+              "surface-container-lowest": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "surface-container": "#f5ece9",
+              "on-primary-container": "#848484",
+              "tertiary": "#000000",
+              "on-tertiary-container": "#848570",
+              "on-error-container": "#93000a",
+              "on-secondary-container": "#745c00",
+              "background": "#fff8f6",
+              "surface-variant": "#e9e1de",
+              "on-tertiary-fixed-variant": "#474836",
+              "surface": "#fff8f6",
+              "tertiary-fixed": "#e4e4cc",
+              "on-tertiary-fixed": "#1b1d0e",
+              "secondary-fixed": "#ffe088",
+              "secondary-fixed-dim": "#e9c349",
+              "surface-dim": "#e1d8d6",
+              "on-background": "#1e1b19",
+              "primary": "#000000",
+              "surface-tint": "#5e5e5e",
+              "on-tertiary": "#ffffff",
+              "on-surface": "#1e1b19",
+              "primary-container": "#1b1b1b",
+              "error-container": "#ffdad6",
+              "outline": "#7e7576",
+              "surface-container-low": "#fbf2ef",
+              "primary-fixed-dim": "#c6c6c6"
+            },
+            "borderRadius": {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "full": "9999px"
+            },
+            "spacing": {
+              "container-max": "1440px",
+              "section-gap": "120px",
+              "unit": "8px",
+              "gutter": "24px",
+              "margin-mobile": "20px",
+              "margin-desktop": "80px"
+            },
+            "fontFamily": {
+              "display-lg-mobile": ["Playfair Display"],
+              "body-md": ["Montserrat"],
+              "display-lg": ["Playfair Display"],
+              "headline-md": ["Playfair Display"],
+              "label-caps": ["Montserrat"],
+              "headline-sm": ["Playfair Display"],
+              "body-lg": ["Montserrat"]
+            },
+            "fontSize": {
+              "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+              "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+              "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+              "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+              "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.2em", "fontWeight": "600"}],
+              "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+              "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-header.active span.rotate-icon {
+            transform: rotate(180deg);
+        }
+        span.rotate-icon {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-secondary-container">
+    <!-- TopNavBar -->
+    <header class="bg-surface border-b border-outline-variant fixed top-0 left-0 right-0 z-50">
+        <nav class="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
+            <!-- Brand Logo -->
+            <a class="font-display-lg text-headline-sm uppercase tracking-widest text-primary" href="index.html">
+                MAS Stylisme
+            </a>
+            <!-- Desktop Links -->
+            <ul class="hidden md:flex items-center space-gap-8 gap-x-12">
+                <li><a class="text-primary border-b border-primary pb-1 font-label-caps text-label-caps" href="boutique.html">Collections</a></li>
+                <li><a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-300" href="design-sur-mesure.html">Sur Mesure</a></li>
+                <li><a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-300" href="academie.html">Académie</a></li>
+                <li><a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-300" href="application.html">Application</a></li>
+            </ul>
+            <!-- Trailing Icons -->
+            <div class="flex items-center gap-6">
+                <a href="mon-compte.html" class="material-symbols-outlined text-on-surface hover:text-secondary transition-colors">favorite</a>
+                <a href="boutique.html" class="material-symbols-outlined text-on-surface hover:text-secondary transition-colors">shopping_bag</a>
+                <a href="mon-compte.html" class="material-symbols-outlined text-on-surface hover:text-secondary transition-colors">person</a>
+                <button class="md:hidden material-symbols-outlined" data-icon="menu" id="mobile-menu-btn">menu</button>
+            </div>
+        </nav>
+        <!-- Mobile Dropdown Menu -->
+        <div class="hidden border-t border-outline-variant px-margin-mobile py-4 bg-surface flex flex-col gap-4 md:hidden" id="mobile-menu">
+            <a class="text-on-surface-variant font-label-caps text-label-caps py-2" href="boutique.html">Collections</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps py-2" href="design-sur-mesure.html">Sur Mesure</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps py-2" href="academie.html">Académie</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps py-2" href="application.html">Application</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps py-2" href="mon-compte.html">Mon Compte</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps py-2" href="atelier-admin.html">Dashboard Atelier</a>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+        <!-- Breadcrumbs -->
+        <div class="mb-12 font-label-caps text-[10px] text-on-surface-variant tracking-widest flex gap-2 items-center">
+            <a href="index.html" class="hover:text-primary transition-colors">ACCUEIL</a>
+            <span>/</span>
+            <a href="boutique.html" class="hover:text-primary transition-colors">COLLECTIONS</a>
+            <span>/</span>
+            <span class="text-primary font-bold">BLAZER EN LAINE SCULPTÉ</span>
+        </div>
+
+        <!-- Product Presentation -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+            <!-- Product Images (Left side) -->
+            <div class="md:col-span-7 grid grid-cols-1 gap-4">
+                <div class="aspect-[3/4] overflow-hidden bg-surface-container border border-outline-variant">
+                    <img class="w-full h-full object-cover" src="assets/collection_charcoal_kanvo.png" alt="Blazer en Laine Sculpté - Vue de Face"/>
+                </div>
+            </div>
+
+            <!-- Product Details Form (Right side) -->
+            <div class="md:col-span-5 space-y-10 md:pl-8">
+                <!-- Title & Price -->
+                <div class="space-y-4">
+                    <span class="font-label-caps text-secondary text-[11px] tracking-[0.3em] uppercase block">ATELIER TAILLEUR COTONOU</span>
+                    <h1 class="font-display-lg text-headline-md text-primary leading-tight">Blazer en Laine Sculpté</h1>
+                    <p class="font-body-lg text-primary text-xl font-semibold">820 000 FCFA</p>
+                </div>
+
+                <hr class="border-outline-variant"/>
+
+                <!-- Description Snippet -->
+                <p class="font-body-md text-on-surface-variant leading-relaxed">
+                    Ce blazer d'exception allie une laine italienne fine de premier choix à des parements de col en pagne tissé traditionnel Kanvo béninois, entièrement brodé à la main d'un fil d'or discret. Une pièce d'apparat au tombé sculptural.
+                </p>
+
+                <!-- Configuration Options -->
+                <div class="space-y-6">
+                    <!-- Color Swatches -->
+                    <div>
+                        <span class="font-label-caps text-label-caps text-on-surface-variant block mb-3 uppercase">Couleur</span>
+                        <div class="flex gap-3">
+                            <button class="w-8 h-8 bg-black rounded-full border-2 border-primary ring-2 ring-offset-2 ring-primary"></button>
+                            <button class="w-8 h-8 bg-stone-500 rounded-full border border-outline-variant hover:scale-105 transition-transform"></button>
+                        </div>
+                    </div>
+
+                    <!-- Size Selector -->
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Taille</span>
+                            <a href="design-sur-mesure.html" class="text-secondary font-label-caps text-[10px] tracking-wider flex items-center gap-1 hover:underline">
+                                <span class="material-symbols-outlined text-[14px]">straighten</span> AJUSTER SUR MESURE
+                            </a>
+                        </div>
+                        <div class="grid grid-cols-5 gap-2">
+                            <button class="border border-outline-variant py-3 font-label-caps text-[11px] hover:border-primary transition-colors">XS</button>
+                            <button class="border border-primary bg-primary text-white py-3 font-label-caps text-[11px]">S</button>
+                            <button class="border border-outline-variant py-3 font-label-caps text-[11px] hover:border-primary transition-colors">M</button>
+                            <button class="border border-outline-variant py-3 font-label-caps text-[11px] hover:border-primary transition-colors">L</button>
+                            <button class="border border-outline-variant py-3 font-label-caps text-[11px] hover:border-primary transition-colors">XL</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Actions -->
+                <div class="space-y-4 pt-4">
+                    <button class="w-full bg-primary text-on-primary py-5 font-label-caps text-label-caps tracking-widest hover:bg-neutral-800 transition-colors uppercase" id="add-to-cart-btn">
+                        Ajouter au Panier
+                    </button>
+                    <a href="design-sur-mesure.html" class="w-full border border-secondary text-secondary py-5 font-label-caps text-label-caps tracking-widest hover:bg-secondary/5 transition-all text-center block uppercase">
+                        Demander sur Mesure
+                    </a>
+                </div>
+
+                <hr class="border-outline-variant"/>
+
+                <!-- Product Information Accordion -->
+                <div class="space-y-4">
+                    <!-- Item 1 -->
+                    <div class="border-b border-outline-variant pb-4">
+                        <button class="accordion-header w-full flex justify-between items-center py-2 font-label-caps text-label-caps text-primary uppercase text-left">
+                            <span>Description &amp; Détails</span>
+                            <span class="material-symbols-outlined rotate-icon">expand_more</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="font-body-md text-on-surface-variant text-sm pt-4 leading-relaxed">
+                                Blazer structuré à double boutonnage, épaules affirmées, col tailleur orné de Kanvo noir et or. Poches passepoilées à rabat et doublure 100% soie sauvage. Conçu et confectionné dans notre atelier d'excellence de Cotonou.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="border-b border-outline-variant pb-4">
+                        <button class="accordion-header w-full flex justify-between items-center py-2 font-label-caps text-label-caps text-primary uppercase text-left">
+                            <span>Matières &amp; Entretien</span>
+                            <span class="material-symbols-outlined rotate-icon">expand_more</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="font-body-md text-on-surface-variant text-sm pt-4 leading-relaxed">
+                                Extérieur : 80% Fine Laine Chevrons Italienne, 20% Coton Kanvo tissé main.<br/>
+                                Doublure : 100 % Soie Naturelle.<br/>
+                                Nettoyage à sec professionnel uniquement. Repassage doux à l'envers.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="border-b border-outline-variant pb-4">
+                        <button class="accordion-header w-full flex justify-between items-center py-2 font-label-caps text-label-caps text-primary uppercase text-left">
+                            <span>Livraison &amp; Retours</span>
+                            <span class="material-symbols-outlined rotate-icon">expand_more</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p class="font-body-md text-on-surface-variant text-sm pt-4 leading-relaxed">
+                                Livraison standard offerte au Bénin et en France sous 3 à 5 jours ouvrés. Retours gratuits sous 14 jours. Les pièces ajustées sur mesure nécessitent un délai d'atelier de 3 semaines et ne sont pas retournables.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- You May Also Like Section -->
+        <section class="mt-28 border-t border-outline-variant pt-20">
+            <h2 class="font-headline-sm text-headline-sm text-primary mb-16 text-center">Vous aimerez aussi</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-gutter">
+                <!-- Product Card 1 -->
+                <div class="product-card group cursor-pointer" onclick="window.location.href='details-produit.html';">
+                    <div class="relative overflow-hidden aspect-[3/4] mb-6 bg-surface-container border border-outline-variant">
+                        <img class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX_DqvHCHmwSVipV2pbLctAc96xwuNA2LE7HH0U7cqP5flH89vqOXOkMY3AmfjohqbcMBhxt7Hy3STamlFQkQOKlUDY0wvyZ8zfdz1y7iEat85rV5fmU1vlzqouJo4Va1KSDJAAxYmcjmNPfOxqjluzjtgs-MnfkSc4MudX1u7GG2MVHZ9oYnzgrklLRWZOMu5nwjYZOhGCBPnAmUTbuY5nz0qVrStRCD1oxiKv05mAy70Tno8oHR-" alt="Pantalon héritage en laine"/>
+                    </div>
+                    <div class="space-y-1">
+                        <p class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest">Tailleur</p>
+                        <h4 class="font-headline-sm text-headline-sm text-primary">Pantalon Héritage en Laine</h4>
+                        <p class="font-body-md text-on-surface-variant">550 000 FCFA</p>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="product-card group cursor-pointer" onclick="window.location.href='details-produit.html';">
+                    <div class="relative overflow-hidden aspect-[3/4] mb-6 bg-surface-container border border-outline-variant">
+                        <img class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCh9SZD66OF3xpYYc9t2Eu0ZEGGZtr8Hlbv_xMDCo7_gGRvpBdvh1Iet86q0Q6bKwSsiXvx4QX-l_6FKt6iWMGnM7V7x0AQ8pWgDhv_Ug7DcK6hlQDMLlIcN-6pDsGb4WAua2PQCzrpLvOlduXdf-f62GMwnWJK8PJ4_RYWR87syFyb1wR3s9KtF54D62El1HuMZAD2-lUTIhVRxPJru-zkfux_1a8oMka4K1U2fJxy3OAm00e0HTge" alt="Chemise en popeline architecturale"/>
+                    </div>
+                    <div class="space-y-1">
+                        <p class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest">Atelier</p>
+                        <h4 class="font-headline-sm text-headline-sm text-primary">Chemise Popeline</h4>
+                        <p class="font-body-md text-on-surface-variant">400 000 FCFA</p>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="product-card group cursor-pointer" onclick="window.location.href='details-produit.html';">
+                    <div class="relative overflow-hidden aspect-[3/4] mb-6 bg-surface-container border border-outline-variant">
+                        <img class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="assets/collection_gold_silk.png" alt="Robe en soie liquide"/>
+                    </div>
+                    <div class="space-y-1">
+                        <p class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest">Soirée</p>
+                        <h4 class="font-headline-sm text-headline-sm text-primary">Robe en Soie Liquide</h4>
+                        <p class="font-body-md text-on-surface-variant">1 830 000 FCFA</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest border-t border-outline-variant mt-section-gap">
+        <div class="flex flex-col md:flex-row justify-between items-start px-margin-desktop py-20 max-w-container-max mx-auto gap-12">
+            <div class="max-w-sm">
+                <span class="font-display-lg text-headline-sm text-primary mb-6 block">MAS Stylisme</span>
+                <p class="font-body-md text-on-surface-variant">Savoir-faire d'exception et élégance intemporelle pour l'individu moderne. Rejoignez notre univers de haute couture exclusive.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-16">
+                <div>
+                    <h5 class="font-label-caps text-label-caps mb-6">Service</h5>
+                    <ul class="space-y-3 font-body-md text-on-surface-variant">
+                        <li><a class="hover:text-primary transition-colors" href="#">Livraisons &amp; Retours</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="design-sur-mesure.html">Service sur Mesure</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Cartes Cadeaux</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Nous Contacter</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-label-caps text-label-caps mb-6">À Propos</h5>
+                    <ul class="space-y-3 font-body-md text-on-surface-variant">
+                        <li><a class="hover:text-primary transition-colors" href="#">Notre Histoire</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Éco-responsabilité</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="mon-compte.html">Mon Compte</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="atelier-admin.html">Dashboard Atelier</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="px-margin-desktop py-8 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto gap-4">
+            <span class="font-label-caps text-[10px] text-on-surface-variant">© 2026 MAS Stylisme. Tous droits réservés. Réalisé par <a href="http://www.rejustewenoumi.com" target="_blank" class="hover:underline">Rejuste WENOUMI</a></span>
+            <div class="flex gap-6">
+                <a class="font-label-caps text-[10px] text-on-surface-variant hover:text-primary transition-colors" href="#">INSTAGRAM</a>
+                <a class="font-label-caps text-[10px] text-on-surface-variant hover:text-primary transition-colors" href="#">TIKTOK</a>
+                <a class="font-label-caps text-[10px] text-on-surface-variant hover:text-primary transition-colors" href="#">PINTEREST</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Accordion functionality
+        const accordions = document.querySelectorAll('.accordion-header');
+        accordions.forEach(acc => {
+            acc.addEventListener('click', () => {
+                acc.classList.toggle('active');
+                const content = acc.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        });
+
+        // Add to cart interactive feedback
+        const cartBtn = document.getElementById('add-to-cart-btn');
+        if (cartBtn) {
+            cartBtn.addEventListener('click', () => {
+                cartBtn.innerHTML = 'Ajouté au Panier !';
+                cartBtn.classList.replace('bg-primary', 'bg-secondary');
+                setTimeout(() => {
+                    cartBtn.innerHTML = 'Ajouter au Panier';
+                    cartBtn.classList.replace('bg-secondary', 'bg-primary');
+                }, 2000);
+            });
+        }
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>

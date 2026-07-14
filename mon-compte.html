@@ -1,0 +1,331 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html class="light" lang="fr">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>MAS Stylisme | Mon Espace Client</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <!-- Tailwind Config Verbatim -->
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "inverse-primary": "#c6c6c6",
+              "on-primary-fixed-variant": "#474747",
+              "surface-container-highest": "#e9e1de",
+              "on-primary-fixed": "#1b1b1b",
+              "outline-variant": "#cfc4c5",
+              "secondary-container": "#fed65b",
+              "on-secondary-fixed": "#241a00",
+              "error": "#ba1a1a",
+              "surface-container-high": "#efe6e4",
+              "secondary": "#735c00",
+              "surface-bright": "#fff8f6",
+              "on-error": "#ffffff",
+              "inverse-surface": "#342f2e",
+              "on-surface-variant": "#4c4546",
+              "tertiary-fixed-dim": "#c8c8b0",
+              "primary-fixed": "#e2e2e2",
+              "tertiary-container": "#1b1d0e",
+              "on-secondary-fixed-variant": "#574500",
+              "inverse-on-surface": "#f8efec",
+              "surface-container-lowest": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "surface-container": "#f5ece9",
+              "on-primary-container": "#848484",
+              "tertiary": "#000000",
+              "on-tertiary-container": "#848570",
+              "on-error-container": "#93000a",
+              "on-secondary-container": "#745c00",
+              "background": "#fff8f6",
+              "surface-variant": "#e9e1de",
+              "on-tertiary-fixed-variant": "#474836",
+              "surface": "#fff8f6",
+              "tertiary-fixed": "#e4e4cc",
+              "on-tertiary-fixed": "#1b1d0e",
+              "secondary-fixed": "#ffe088",
+              "secondary-fixed-dim": "#e9c349",
+              "surface-dim": "#e1d8d6",
+              "on-background": "#1e1b19",
+              "primary": "#000000",
+              "surface-tint": "#5e5e5e",
+              "on-tertiary": "#ffffff",
+              "on-surface": "#1e1b19",
+              "primary-container": "#1b1b1b",
+              "error-container": "#ffdad6",
+              "outline": "#7e7576",
+              "surface-container-low": "#fbf2ef",
+              "primary-fixed-dim": "#c6c6c6"
+            },
+            "borderRadius": {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "full": "9999px"
+            },
+            "spacing": {
+              "container-max": "1440px",
+              "section-gap": "120px",
+              "unit": "8px",
+              "gutter": "24px",
+              "margin-mobile": "20px",
+              "margin-desktop": "80px"
+            },
+            "fontFamily": {
+              "display-lg-mobile": ["Playfair Display"],
+              "body-md": ["Montserrat"],
+              "display-lg": ["Playfair Display"],
+              "headline-md": ["Playfair Display"],
+              "label-caps": ["Montserrat"],
+              "headline-sm": ["Playfair Display"],
+              "body-lg": ["Montserrat"]
+            },
+            "fontSize": {
+              "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+              "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+              "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+              "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+              "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.2em", "fontWeight": "600"}],
+              "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+              "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-secondary-container">
+    <!-- TopNavBar -->
+    <header class="bg-surface border-b border-outline-variant fixed top-0 left-0 right-0 z-50">
+        <nav class="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
+            <!-- Brand Logo -->
+            <a class="font-display-lg text-headline-sm uppercase tracking-widest text-primary" href="index.html">
+                MAS Stylisme
+            </a>
+            <!-- Desktop Links -->
+            <ul class="hidden md:flex items-center space-gap-8 gap-x-12">
+                <li><a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-300" href="boutique.html">Collections</a></li>
+                <li><a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-300" href="design-sur-mesure.html">Sur Mesure</a></li>
+                <li><a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-300" href="academie.html">Académie</a></li>
+                <li><a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-300" href="application.html">Application</a></li>
+            </ul>
+            <!-- Trailing Icons -->
+            <div class="flex items-center gap-6">
+                <a href="mon-compte.html" class="material-symbols-outlined text-primary hover:text-secondary transition-colors">favorite</a>
+                <a href="boutique.html" class="material-symbols-outlined text-on-surface hover:text-secondary transition-colors">shopping_bag</a>
+                <a href="mon-compte.html" class="material-symbols-outlined text-primary hover:text-secondary transition-colors">person</a>
+                <button class="md:hidden material-symbols-outlined" data-icon="menu" id="mobile-menu-btn">menu</button>
+            </div>
+        </nav>
+        <!-- Mobile Dropdown Menu -->
+        <div class="hidden border-t border-outline-variant px-margin-mobile py-4 bg-surface flex flex-col gap-4 md:hidden" id="mobile-menu">
+            <a class="text-on-surface-variant font-label-caps text-label-caps py-2" href="boutique.html">Collections</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps py-2" href="design-sur-mesure.html">Sur Mesure</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps py-2" href="academie.html">Académie</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps py-2" href="application.html">Application</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps py-2" href="mon-compte.html">Mon Compte</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps py-2" href="atelier-admin.html">Dashboard Atelier</a>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+        <!-- Welcome Header -->
+        <header class="mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+            <div>
+                <span class="font-label-caps text-secondary text-[11px] tracking-[0.3em] uppercase block mb-3">ESPACE EXCLUSIF CLIENT</span>
+                <h1 class="font-display-lg text-headline-md text-primary leading-tight">Mon Compte MAS</h1>
+                <p class="font-body-md text-on-surface-variant text-sm mt-2">Bienvenue, Jean Dupont. Niveau d'adhésion : Membre d'Élite.</p>
+            </div>
+            <a href="design-sur-mesure.html" class="bg-primary text-on-primary font-label-caps text-label-caps px-8 py-4 uppercase tracking-widest hover:bg-neutral-800 transition-colors flex items-center gap-2">
+                <span class="material-symbols-outlined text-[16px]">straighten</span> Lancer une Création
+            </a>
+        </header>
+
+        <!-- Main Workspace Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+            <!-- Left Column: Profile Card & Measurements -->
+            <div class="lg:col-span-4 space-y-12">
+                <!-- User Profile & Stats -->
+                <div class="bg-surface-container-low p-8 border border-outline-variant text-center">
+                    <div class="w-24 h-24 rounded-full overflow-hidden mx-auto mb-6 bg-surface-container border border-outline-variant">
+                        <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZTov6gtemMyXPeIaRZYxL1ob-B53ovw9xDrO_9j2S6BOaOY9ayMHrYFhf02-WSzduoYhrn2g7CKLm_G31Y4Or_d9tUVWrzOw1sEzVty0kW_XExpddD87n90b5GoYFU2q-HGfRm0ToBz67WaXYxDbeJXv_Bn-ECqM15bqMoARQXeWLm5c4NAV3oXvJXRGBUSRHcmBzZ8O9hVz6eO_RsZqhFobEuV7ct3GuMUOTKcix3LoDfALMQsy1" alt="Avatar Utilisateur"/>
+                    </div>
+                    <h3 class="font-headline-sm text-headline-sm text-primary mb-1">Jean Dupont</h3>
+                    <p class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest mb-6">jean.dupont@email.com</p>
+                    <div class="grid grid-cols-2 gap-4 border-t border-outline-variant pt-6">
+                        <div>
+                            <span class="text-[9px] font-label-caps text-outline block mb-1">MEMBRE DEPUIS</span>
+                            <span class="font-label-caps text-label-caps text-primary">Avril 2023</span>
+                        </div>
+                        <div>
+                            <span class="text-[9px] font-label-caps text-outline block mb-1">POINTS PRIVILÈGE</span>
+                            <span class="font-label-caps text-label-caps text-secondary">4 850 pts</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Saved Measurements -->
+                <div class="bg-surface border border-outline-variant p-8 space-y-6">
+                    <div class="flex justify-between items-center pb-2 border-b border-outline-variant">
+                        <h3 class="font-label-caps text-label-caps text-primary">Mes Mensurations IA</h3>
+                        <a href="design-sur-mesure.html" class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors text-[18px]">edit</a>
+                    </div>
+                    <div class="grid grid-cols-2 gap-y-4 gap-x-6 text-sm">
+                        <div class="flex justify-between border-b border-outline-variant/30 pb-2">
+                            <span class="text-on-surface-variant font-body-md">Épaules</span>
+                            <span class="font-bold text-primary">48.2 cm</span>
+                        </div>
+                        <div class="flex justify-between border-b border-outline-variant/30 pb-2">
+                            <span class="text-on-surface-variant font-body-md">Poitrine</span>
+                            <span class="font-bold text-primary">102.0 cm</span>
+                        </div>
+                        <div class="flex justify-between border-b border-outline-variant/30 pb-2">
+                            <span class="text-on-surface-variant font-body-md">Manches</span>
+                            <span class="font-bold text-primary">64.5 cm</span>
+                        </div>
+                        <div class="flex justify-between border-b border-outline-variant/30 pb-2">
+                            <span class="text-on-surface-variant font-body-md">Taille</span>
+                            <span class="font-bold text-primary">84.1 cm</span>
+                        </div>
+                    </div>
+                    <p class="text-[10px] text-on-surface-variant italic">Ces mesures sont synchronisées avec l'application mobile pour les coupes sur mesure.</p>
+                </div>
+            </div>
+
+            <!-- Right Column: Orders & Appointments -->
+            <div class="lg:col-span-8 space-y-12">
+                <!-- Section: Appointments -->
+                <section class="bg-surface border border-outline-variant p-8 space-y-8">
+                    <h2 class="font-headline-sm text-headline-sm border-b border-outline-variant pb-4">Mes Rendez-vous d'Essayage</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Appointment Card 1 -->
+                        <div class="p-6 bg-surface-container-low border border-outline-variant space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="bg-secondary/15 text-secondary text-[8px] font-label-caps px-2 py-1 uppercase tracking-widest font-bold">À VENIR</span>
+                                <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+                            </div>
+                            <div class="space-y-1">
+                                <h4 class="font-headline-sm text-sm text-primary">Ajustement Costume de Gala</h4>
+                                <p class="text-xs text-on-surface-variant">Jeudi 23 Juillet à 14h30</p>
+                                <p class="text-[11px] text-outline">Atelier Principal - Cotonou, Bénin</p>
+                            </div>
+                        </div>
+                        <!-- Appointment Card 2 -->
+                        <div class="p-6 bg-surface-container-low border border-outline-variant space-y-4 opacity-60">
+                            <div class="flex justify-between items-start">
+                                <span class="bg-outline-variant text-on-surface-variant text-[8px] font-label-caps px-2 py-1 uppercase tracking-widest">PASSÉ</span>
+                                <span class="material-symbols-outlined text-on-surface-variant">check_circle</span>
+                            </div>
+                            <div class="space-y-1">
+                                <h4 class="font-headline-sm text-sm text-primary">Première Consultation de Style</h4>
+                                <p class="text-xs text-on-surface-variant">Mardi 12 Mai à 11h00</p>
+                                <p class="text-[11px] text-outline">En ligne avec notre Directeur Création</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section: Orders -->
+                <section class="bg-surface border border-outline-variant p-8 space-y-8">
+                    <h2 class="font-headline-sm text-headline-sm border-b border-outline-variant pb-4">Historique des Commandes</h2>
+                    <div class="space-y-6">
+                        <!-- Order Card 1 -->
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 p-6 border border-outline-variant hover:border-secondary transition-colors">
+                            <div class="space-y-2">
+                                <div class="flex gap-4 items-center">
+                                    <span class="font-label-caps text-label-caps text-primary">#MAS-2911</span>
+                                    <span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[9px] font-bold font-label-caps rounded-full border border-secondary">En Essayage</span>
+                                </div>
+                                <h4 class="font-headline-sm text-sm text-primary">Costume en Laine Sur Mesure (Indigo Kanvo)</h4>
+                                <p class="text-xs text-on-surface-variant">Livraison estimée : Mi-Août 2026</p>
+                            </div>
+                            <div class="text-left md:text-right space-y-1">
+                                <span class="font-label-caps text-[10px] text-outline block">MONTANT TOTAL</span>
+                                <span class="font-label-caps text-label-caps text-primary font-bold">2 525 000 FCFA</span>
+                            </div>
+                        </div>
+                        <!-- Order Card 2 -->
+                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 p-6 border border-outline-variant opacity-70">
+                            <div class="space-y-2">
+                                <div class="flex gap-4 items-center">
+                                    <span class="font-label-caps text-label-caps text-primary">#MAS-2732</span>
+                                    <span class="px-3 py-1 bg-green-50 text-green-700 text-[9px] font-bold font-label-caps rounded-full border border-green-200">Livrée</span>
+                                </div>
+                                <h4 class="font-headline-sm text-sm text-primary">Chemise en Popeline</h4>
+                                <p class="text-xs text-on-surface-variant">Livrée le 14 Décembre 2025</p>
+                            </div>
+                            <div class="text-left md:text-right space-y-1">
+                                <span class="font-label-caps text-[10px] text-outline block">MONTANT TOTAL</span>
+                                <span class="font-label-caps text-label-caps text-primary font-bold">400 000 FCFA</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest border-t border-outline-variant mt-section-gap">
+        <div class="flex flex-col md:flex-row justify-between items-start px-margin-desktop py-20 max-w-container-max mx-auto gap-12">
+            <div class="max-w-sm">
+                <span class="font-display-lg text-headline-sm text-primary mb-6 block">MAS Stylisme</span>
+                <p class="font-body-md text-on-surface-variant">Savoir-faire d'exception et élégance intemporelle pour l'individu moderne. Rejoignez notre univers de haute couture exclusive.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-16">
+                <div>
+                    <h5 class="font-label-caps text-label-caps mb-6">Service</h5>
+                    <ul class="space-y-3 font-body-md text-on-surface-variant">
+                        <li><a class="hover:text-primary transition-colors" href="#">Livraisons &amp; Retours</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="design-sur-mesure.html">Service sur Mesure</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Cartes Cadeaux</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Nous Contacter</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-label-caps text-label-caps mb-6">À Propos</h5>
+                    <ul class="space-y-3 font-body-md text-on-surface-variant">
+                        <li><a class="hover:text-primary transition-colors" href="#">Notre Histoire</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Éco-responsabilité</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="mon-compte.html">Mon Compte</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="atelier-admin.html">Dashboard Atelier</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="px-margin-desktop py-8 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto gap-4">
+            <span class="font-label-caps text-[10px] text-on-surface-variant">© 2026 MAS Stylisme. Tous droits réservés. Réalisé par <a href="http://www.rejustewenoumi.com" target="_blank" class="hover:underline">Rejuste WENOUMI</a></span>
+            <div class="flex gap-6">
+                <a class="font-label-caps text-[10px] text-on-surface-variant hover:text-primary transition-colors" href="#">INSTAGRAM</a>
+                <a class="font-label-caps text-[10px] text-on-surface-variant hover:text-primary transition-colors" href="#">TIKTOK</a>
+                <a class="font-label-caps text-[10px] text-on-surface-variant hover:text-primary transition-colors" href="#">PINTEREST</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+name: MAS Stylisme
+description: Maison de Haute Couture & Art Tailleur Béninois
+markdown: kramdown
+theme: jekyll-theme-merlot
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor

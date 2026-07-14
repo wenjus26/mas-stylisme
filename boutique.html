@@ -1,0 +1,347 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html class="light" lang="fr">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>MAS Stylisme | La Boutique Élite</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <!-- Tailwind Configuration -->
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "inverse-primary": "#c6c6c6",
+              "on-primary-fixed-variant": "#474747",
+              "surface-container-highest": "#e9e1de",
+              "on-primary-fixed": "#1b1b1b",
+              "outline-variant": "#cfc4c5",
+              "secondary-container": "#fed65b",
+              "on-secondary-fixed": "#241a00",
+              "error": "#ba1a1a",
+              "surface-container-high": "#efe6e4",
+              "secondary": "#735c00",
+              "surface-bright": "#fff8f6",
+              "on-error": "#ffffff",
+              "inverse-surface": "#342f2e",
+              "on-surface-variant": "#4c4546",
+              "tertiary-fixed-dim": "#c8c8b0",
+              "primary-fixed": "#e2e2e2",
+              "tertiary-container": "#1b1d0e",
+              "on-secondary-fixed-variant": "#574500",
+              "inverse-on-surface": "#f8efec",
+              "surface-container-lowest": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-secondary": "#ffffff",
+              "surface-container": "#f5ece9",
+              "on-primary-container": "#848484",
+              "tertiary": "#000000",
+              "on-tertiary-container": "#848570",
+              "on-error-container": "#93000a",
+              "on-secondary-container": "#745c00",
+              "background": "#fff8f6",
+              "surface-variant": "#e9e1de",
+              "on-tertiary-fixed-variant": "#474836",
+              "surface": "#fff8f6",
+              "tertiary-fixed": "#e4e4cc",
+              "on-tertiary-fixed": "#1b1d0e",
+              "secondary-fixed": "#ffe088",
+              "secondary-fixed-dim": "#e9c349",
+              "surface-dim": "#e1d8d6",
+              "on-background": "#1e1b19",
+              "primary": "#000000",
+              "surface-tint": "#5e5e5e",
+              "on-tertiary": "#ffffff",
+              "on-surface": "#1e1b19",
+              "primary-container": "#1b1b1b",
+              "error-container": "#ffdad6",
+              "outline": "#7e7576",
+              "surface-container-low": "#fbf2ef",
+              "primary-fixed-dim": "#c6c6c6"
+            },
+            "borderRadius": {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "full": "9999px"
+            },
+            "spacing": {
+              "container-max": "1440px",
+              "section-gap": "120px",
+              "unit": "8px",
+              "gutter": "24px",
+              "margin-mobile": "20px",
+              "margin-desktop": "80px"
+            },
+            "fontFamily": {
+              "display-lg-mobile": ["Playfair Display"],
+              "body-md": ["Montserrat"],
+              "display-lg": ["Playfair Display"],
+              "headline-md": ["Playfair Display"],
+              "label-caps": ["Montserrat"],
+              "headline-sm": ["Playfair Display"],
+              "body-lg": ["Montserrat"]
+            },
+            "fontSize": {
+              "display-lg-mobile": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+              "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+              "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+              "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+              "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.2em", "fontWeight": "600"}],
+              "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+              "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+    <!-- TopNavBar -->
+    <header class="bg-surface border-b border-outline-variant fixed top-0 left-0 right-0 z-50">
+        <nav class="flex justify-between items-center w-full px-margin-desktop py-6 max-w-container-max mx-auto">
+            <!-- Brand Logo -->
+            <a class="font-display-lg text-headline-sm uppercase tracking-widest text-primary" href="index.html">
+                MAS Stylisme
+            </a>
+            <!-- Desktop Links -->
+            <ul class="hidden md:flex items-center space-gap-8 gap-x-12">
+                <li><a class="text-primary border-b border-primary pb-1 font-label-caps text-label-caps" href="boutique.html">Collections</a></li>
+                <li><a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-300" href="design-sur-mesure.html">Sur Mesure</a></li>
+                <li><a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-300" href="academie.html">Académie</a></li>
+                <li><a class="text-on-surface-variant font-label-caps text-label-caps hover:text-secondary transition-colors duration-300" href="application.html">Application</a></li>
+            </ul>
+            <!-- Trailing Icons -->
+            <div class="flex items-center gap-6">
+                <a href="mon-compte.html" class="material-symbols-outlined text-on-surface hover:text-secondary transition-colors">favorite</a>
+                <a href="boutique.html" class="material-symbols-outlined text-on-surface hover:text-secondary transition-colors">shopping_bag</a>
+                <a href="mon-compte.html" class="material-symbols-outlined text-on-surface hover:text-secondary transition-colors">person</a>
+                <button class="md:hidden material-symbols-outlined" data-icon="menu" id="mobile-menu-btn">menu</button>
+            </div>
+        </nav>
+        <!-- Mobile Dropdown Menu -->
+        <div class="hidden border-t border-outline-variant px-margin-mobile py-4 bg-surface flex flex-col gap-4 md:hidden" id="mobile-menu">
+            <a class="text-on-surface-variant font-label-caps text-label-caps py-2" href="boutique.html">Collections</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps py-2" href="design-sur-mesure.html">Sur Mesure</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps py-2" href="academie.html">Académie</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps py-2" href="application.html">Application</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps py-2" href="mon-compte.html">Mon Compte</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps py-2" href="atelier-admin.html">Dashboard Atelier</a>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+        <!-- Category Header -->
+        <div class="mb-16 text-center">
+            <span class="font-label-caps text-secondary text-[11px] tracking-[0.4em] uppercase block mb-4">PRET-A-PORTER &amp; SUR MESURE DE LUXE</span>
+            <h1 class="font-display-lg text-display-lg-mobile md:text-headline-md text-primary font-bold">La Collection Élite</h1>
+            <p class="font-body-md text-on-surface-variant text-sm mt-4 max-w-lg mx-auto">Découvrez nos créations exclusives façonnées à la main, alliant la laine fine aux fils de coton tissés Kanvo.</p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="flex flex-col md:flex-row justify-between items-center border-y border-outline-variant/30 py-6 mb-12 gap-4">
+            <div class="flex gap-8 text-[11px] font-label-caps tracking-widest text-on-surface-variant">
+                <button class="text-primary font-bold">TOUT VOIR</button>
+                <button class="hover:text-primary">TAILLEURS</button>
+                <button class="hover:text-primary">ROBES</button>
+                <button class="hover:text-primary">ACCESSOIRES</button>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="font-label-caps text-[10px] text-on-surface-variant">TRIER PAR :</span>
+                <select class="border-0 bg-transparent font-label-caps text-[11px] py-1 pl-0 pr-8 focus:ring-0 focus:border-primary text-primary tracking-widest cursor-pointer">
+                    <option>PERTINENCE</option>
+                    <option>PRIX CROISSANT</option>
+                    <option>PRIX DÉCROISSANT</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-gutter gap-y-16">
+            <!-- Product 1 -->
+            <div class="product-card group cursor-pointer" onclick="window.location.href='details-produit.html';">
+                <div class="relative overflow-hidden aspect-[3/4] mb-6 bg-surface-container border border-outline-variant">
+                    <img class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="assets/collection_charcoal_kanvo.png" alt="Blazer en Laine Sculpté avec parements Kanvo"/>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest">Tailleur</p>
+                            <h3 class="font-headline-sm text-lg text-primary group-hover:text-secondary transition-colors">Blazer en Laine Sculpté</h3>
+                        </div>
+                        <span class="font-body-md font-semibold text-primary">820 000 FCFA</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card group cursor-pointer" onclick="window.location.href='details-produit.html';">
+                <div class="relative overflow-hidden aspect-[3/4] mb-6 bg-surface-container border border-outline-variant">
+                    <img class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="assets/collection_gold_silk.png" alt="Robe de Soirée en Soie Liquide Or"/>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest">Robes</p>
+                            <h3 class="font-headline-sm text-lg text-primary group-hover:text-secondary transition-colors">Robe en Soie Liquide</h3>
+                        </div>
+                        <span class="font-body-md font-semibold text-primary">1 830 000 FCFA</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card group cursor-pointer" onclick="window.location.href='details-produit.html';">
+                <div class="relative overflow-hidden aspect-[3/4] mb-6 bg-surface-container border border-outline-variant">
+                    <img class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX_DqvHCHmwSVipV2pbLctAc96xwuNA2LE7HH0U7cqP5flH89vqOXOkMY3AmfjohqbcMBhxt7Hy3STamlFQkQOKlUDY0wvyZ8zfdz1y7iEat85rV5fmU1vlzqouJo4Va1KSDJAAxYmcjmNPfOxqjluzjtgs-MnfkSc4MudX1u7GG2MVHZ9oYnzgrklLRWZOMu5nwjYZOhGCBPnAmUTbuY5nz0qVrStRCD1oxiKv05mAy70Tno8oHR-" alt="Pantalon Héritage en Laine et Kanvo"/>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest">Tailleur</p>
+                            <h3 class="font-headline-sm text-lg text-primary group-hover:text-secondary transition-colors">Pantalon Héritage en Laine</h3>
+                        </div>
+                        <span class="font-body-md font-semibold text-primary">550 000 FCFA</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card group cursor-pointer" onclick="window.location.href='details-produit.html';">
+                <div class="relative overflow-hidden aspect-[3/4] mb-6 bg-surface-container border border-outline-variant">
+                    <img class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCh9SZD66OF3xpYYc9t2Eu0ZEGGZtr8Hlbv_xMDCo7_gGRvpBdvh1Iet86q0Q6bKwSsiXvx4QX-l_6FKt6iWMGnM7V7x0AQ8pWgDhv_Ug7DcK6hlQDMLlIcN-6pDsGb4WAua2PQCzrpLvOlduXdf-f62GMwnWJK8PJ4_RYWR87syFyb1wR3s9KtF54D62El1HuMZAD2-lUTIhVRxPJru-zkfux_1a8oMka4K1U2fJxy3OAm00e0HTge" alt="Chemise Popeline Traditionnelle"/>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest">Couture</p>
+                            <h3 class="font-headline-sm text-lg text-primary group-hover:text-secondary transition-colors">Chemise Popeline</h3>
+                        </div>
+                        <span class="font-body-md font-semibold text-primary">400 000 FCFA</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5 -->
+            <div class="product-card group cursor-pointer" onclick="window.location.href='details-produit.html';">
+                <div class="relative overflow-hidden aspect-[3/4] mb-6 bg-surface-container border border-outline-variant">
+                    <img class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT4CnSCI8BgG1TL-JLbQ791Ovql7olKITSugBAuY9guLiP_uzoWDu1DWIqAmLrgSrA0E2tzxMZG0xvL38NT2f-W3igARv5kVimYkER90c63r41wj8488e_D27fCY0cDPwLLWP8YyLJoiGfwhjjyuL-wwey5VJvGN1-7VlKN-Wf8UHdCJcFmPenxLtyauAFR4QQmXxxwzOJ2VWa2k-w7ZvYXunU-8LB7cazBEkjXgZ3GQb3Fqekf0LH" alt="Costume Traditionnel Drapé"/>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest">Couture</p>
+                            <h3 class="font-headline-sm text-lg text-primary group-hover:text-secondary transition-colors">Costume Royal Drapé</h3>
+                        </div>
+                        <span class="font-body-md font-semibold text-primary">1 570 000 FCFA</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="product-card group cursor-pointer" onclick="window.location.href='details-produit.html';">
+                <div class="relative overflow-hidden aspect-[3/4] mb-6 bg-surface-container border border-outline-variant">
+                    <img class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWueEqE9cQkQMIn1ZcFGc3o6ulepw5-ToF1h6s-ghJ8ahnL77xYHaao6ghT1_noxs0IpXYSz7aj4JJly5QtT86uuihWOKFd-qqVqRoEtNVcG2HG8XMKUfs9pFb9KjZxceV86CyH5GycTm9nNLK2pZMcbWoMmwvXuPJn_mG9q1PBAGvvZ2-OT2tlXn2VYn3entXsE85AbMJWpv1rPoOeSP3Mj7ErWS9rOY916ZAfhRzb9R6VoE_Suzq" alt="Accessoires - Pochette d'Apparat Kanvo"/>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-widest">Accessoires</p>
+                            <h3 class="font-headline-sm text-lg text-primary group-hover:text-secondary transition-colors">Pochette d'Apparat Kanvo</h3>
+                        </div>
+                        <span class="font-body-md font-semibold text-primary">295 000 FCFA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="mt-24 flex justify-center items-center gap-8 border-t border-outline-variant pt-12">
+            <button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2">
+                <span class="material-symbols-outlined text-sm">arrow_back</span> Précédent
+            </button>
+            <div class="flex gap-6">
+                <span class="font-label-caps text-label-caps text-primary border-b border-primary">01</span>
+                <span class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary cursor-pointer transition-colors">02</span>
+                <span class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary cursor-pointer transition-colors">03</span>
+            </div>
+            <button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2">
+                Suivant <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-lowest border-t border-outline-variant mt-section-gap">
+        <div class="flex flex-col md:flex-row justify-between items-start px-margin-desktop py-20 max-w-container-max mx-auto gap-12">
+            <div class="max-w-sm">
+                <span class="font-display-lg text-headline-sm text-primary mb-6 block">MAS Stylisme</span>
+                <p class="font-body-md text-on-surface-variant">Savoir-faire d'exception et élégance intemporelle pour l'individu moderne. Rejoignez notre univers de haute couture exclusive.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-16">
+                <div>
+                    <h5 class="font-label-caps text-label-caps mb-6">Service</h5>
+                    <ul class="space-y-3 font-body-md text-on-surface-variant">
+                        <li><a class="hover:text-primary transition-colors" href="#">Livraisons &amp; Retours</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="design-sur-mesure.html">Service sur Mesure</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Cartes Cadeaux</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Nous Contacter</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-label-caps text-label-caps mb-6">À Propos</h5>
+                    <ul class="space-y-3 font-body-md text-on-surface-variant">
+                        <li><a class="hover:text-primary transition-colors" href="#">Notre Histoire</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="#">Éco-responsabilité</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="mon-compte.html">Mon Compte</a></li>
+                        <li><a class="hover:text-primary transition-colors" href="atelier-admin.html">Dashboard Atelier</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="px-margin-desktop py-8 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto gap-4">
+            <span class="font-label-caps text-[10px] text-on-surface-variant">© 2026 MAS Stylisme. Tous droits réservés. Réalisé par <a href="http://www.rejustewenoumi.com" target="_blank" class="hover:underline">Rejuste WENOUMI</a></span>
+            <div class="flex gap-6">
+                <a class="font-label-caps text-[10px] text-on-surface-variant hover:text-primary transition-colors" href="#">INSTAGRAM</a>
+                <a class="font-label-caps text-[10px] text-on-surface-variant hover:text-primary transition-colors" href="#">TIKTOK</a>
+                <a class="font-label-caps text-[10px] text-on-surface-variant hover:text-primary transition-colors" href="#">PINTEREST</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Micro-interactions
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const img = card.querySelector('img');
+                if (img) img.style.transform = 'scale(1.05)';
+            });
+            card.addEventListener('mouseleave', () => {
+                const img = card.querySelector('img');
+                if (img) img.style.transform = 'scale(1)';
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
