@@ -6,7 +6,7 @@ layout: null
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>MAS Stylisme | Design Sur Mesure</title>
+    <title>MAS Stylisme | Design Sur Mesure - Tailleur d'Afrique</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -135,15 +135,15 @@ layout: null
             <a class="text-on-surface-variant font-label-caps text-label-caps py-2" href="design-sur-mesure.html">Sur Mesure</a>
             <a class="text-on-surface-variant font-label-caps text-label-caps py-2" href="academie.html">Académie</a>
             <a class="text-on-surface-variant font-label-caps text-label-caps py-2" href="application.html">Application</a>
-            <a class="text-on-surface-variant font-label-caps text-label-caps py-2" href="mon-compte.html">Mon Compte</a>
+            <a class="text-on-surface-variant font-label-caps text-label-caps py-2" href="mon-compte.html">Mon Commte</a>
             <a class="text-on-surface-variant font-label-caps text-label-caps py-2" href="atelier-admin.html">Dashboard Atelier</a>
         </div>
     </header>
 
-    <main class="max-w-container-max mx-auto px-margin-desktop py-12 md:py-16">
+    <main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-16">
         <!-- Header & Stepper -->
         <header class="mb-12 text-center">
-            <span class="font-label-caps text-secondary text-[11px] tracking-[0.3em] uppercase block mb-4">SERVICE DE CONCEPTION SUR MESURE</span>
+            <span class="font-label-caps text-secondary text-[11px] tracking-[0.3em] uppercase block mb-4">SERVICE DE CONCEPTION SUR MESURE - TAILLEUR D'AFRIQUE</span>
             <h1 class="font-display-lg text-display-lg-mobile md:text-headline-md text-primary">Créer Votre Vêtement d'Apparat</h1>
             <!-- Custom Step Indicator -->
             <div class="flex justify-center items-center gap-4 mt-8">
@@ -164,29 +164,60 @@ layout: null
                 <!-- Category Select -->
                 <div class="space-y-2">
                     <label class="block font-label-caps text-label-caps text-on-surface-variant uppercase">Type de Vêtement</label>
-                    <select class="w-full border-outline-variant focus:border-primary focus:ring-0 rounded">
+                    <select class="w-full border-outline-variant focus:border-primary focus:ring-0 rounded" id="garment-type-select">
                         <option>Costume Trois-Pièces Royal (Laine &amp; Kanvo)</option>
                         <option>Blazer Architectural Féminin</option>
                         <option>Robe de Gala / Soirée Drapée</option>
+                        <option>Robe ou Ensemble d'Apparat en Crochet d'Art</option>
                         <option>Tenue d'Apparat Traditionnelle Béninoise</option>
                     </select>
                 </div>
 
                 <!-- Fabric Options -->
                 <div class="space-y-4">
-                    <label class="block font-label-caps text-label-caps text-on-surface-variant uppercase">Sélection de Tissus Nobles</label>
-                    <div class="grid grid-cols-3 gap-4">
-                        <div class="border border-outline-variant p-4 text-center cursor-pointer hover:border-primary">
+                    <label class="block font-label-caps text-label-caps text-on-surface-variant uppercase">Sélection de Tissus &amp; Confections Nobles</label>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="fabric-selection-container">
+                        <div class="border border-outline-variant p-4 text-center cursor-pointer hover:border-primary fabric-option-card" onclick="selectFabric(this, 'Kanvo Impérial')">
                             <div class="w-12 h-12 rounded-full mx-auto mb-2 bg-stone-900 border border-outline-variant"></div>
                             <span class="font-label-caps text-[10px] block uppercase">Kanvo Impérial</span>
                         </div>
-                        <div class="border border-primary p-4 text-center cursor-pointer">
+                        <div class="border border-primary p-4 text-center cursor-pointer fabric-option-card" onclick="selectFabric(this, 'Kanvo Indigo')">
                             <div class="w-12 h-12 rounded-full mx-auto mb-2 bg-indigo-900 border border-outline-variant"></div>
                             <span class="font-label-caps text-[10px] block uppercase">Kanvo Indigo</span>
                         </div>
-                        <div class="border border-outline-variant p-4 text-center cursor-pointer hover:border-primary">
+                        <div class="border border-outline-variant p-4 text-center cursor-pointer hover:border-primary fabric-option-card" onclick="selectFabric(this, 'Cachemire & Soie')">
                             <div class="w-12 h-12 rounded-full mx-auto mb-2 bg-amber-800 border border-outline-variant"></div>
                             <span class="font-label-caps text-[10px] block uppercase">Cachemire &amp; Soie</span>
+                        </div>
+                        <div class="border border-outline-variant p-4 text-center cursor-pointer hover:border-primary fabric-option-card" onclick="selectFabric(this, 'Crochet Coton Bio')">
+                            <div class="w-12 h-12 rounded-full mx-auto mb-2 bg-amber-100 border border-outline-variant flex items-center justify-center">
+                                <span class="material-symbols-outlined text-secondary" style="font-size: 24px;">gesture</span>
+                            </div>
+                            <span class="font-label-caps text-[10px] block uppercase">Crochet Coton Bio</span>
+                        </div>
+                    </div>
+                    <input type="hidden" id="selected-fabric-input" value="Kanvo Indigo"/>
+                </div>
+
+                <!-- Crochet details (Dynamically showed when Crochet is chosen) -->
+                <div class="space-y-4 hidden border-l-2 border-secondary pl-4" id="crochet-custom-section">
+                    <h4 class="font-label-caps text-label-caps text-secondary uppercase">Spécifications Crochet</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-[10px] font-label-caps text-on-surface-variant">TYPE DE MAILLE</label>
+                            <select class="w-full border-outline-variant focus:border-primary focus:ring-0 rounded text-sm">
+                                <option>Maille ajourée (Dentelle d'Afrique)</option>
+                                <option>Maille serrée (Coupe structurée)</option>
+                                <option>Motifs géométriques traditionnels</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-label-caps text-on-surface-variant">DOUBLURE SOIE</label>
+                            <select class="w-full border-outline-variant focus:border-primary focus:ring-0 rounded text-sm">
+                                <option>Oui (Doublure Soie Or)</option>
+                                <option>Oui (Doublure Soie Ton sur Ton)</option>
+                                <option>Sans doublure (Effet transparent)</option>
+                            </select>
                         </div>
                     </div>
                 </div>
@@ -233,7 +264,7 @@ layout: null
                 <div class="bg-surface-container-low p-8 border border-outline-variant space-y-6">
                     <h3 class="font-headline-sm text-primary">L'Atelier d'Exception</h3>
                     <p class="font-body-md text-sm text-on-surface-variant leading-relaxed">
-                        Chaque vêtement sur mesure est une pièce unique réalisée par nos maîtres tailleurs à Cotonou. Comptez un délai de 3 à 4 semaines de confection après validation finale de vos mesures.
+                        Chaque vêtement sur mesure est une pièce unique réalisée par nos maîtres tailleurs et artisanes crocheteuses à Cotonou. Comptez un délai de 3 à 4 semaines de confection après validation finale de vos mesures.
                     </p>
                     <div class="aspect-video overflow-hidden rounded bg-surface border border-outline-variant">
                         <img class="w-full h-full object-cover" src="assets/tailor_kanvo_detail.png" alt="Tailleur à l'œuvre"/>
@@ -247,6 +278,10 @@ layout: null
                         <li class="flex justify-between border-b border-outline-variant/30 pb-2">
                             <span>Costume Royal Kanvo</span>
                             <span class="font-bold text-primary">À partir de 1 500 000 FCFA</span>
+                        </li>
+                        <li class="flex justify-between border-b border-outline-variant/30 pb-2">
+                            <span>Robe ou Ensemble Crochet d'Art</span>
+                            <span class="font-bold text-primary">À partir de 950 000 FCFA</span>
                         </li>
                         <li class="flex justify-between border-b border-outline-variant/30 pb-2">
                             <span>Blazer Architectural</span>
@@ -290,6 +325,7 @@ layout: null
                 </div>
             </div>
         </div>
+
         <div class="px-margin-desktop py-8 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto gap-4">
             <span class="font-label-caps text-[10px] text-on-surface-variant">© 2026 MAS Stylisme. Tous droits réservés. Réalisé par <a href="http://www.rejustewenoumi.com" target="_blank" class="hover:underline">Rejuste WENOUMI</a></span>
             <div class="flex gap-6">
@@ -316,6 +352,47 @@ layout: null
         if (mobileMenuBtn && mobileMenu) {
             mobileMenuBtn.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Fabric selection handler
+        function selectFabric(card, fabricName) {
+            const cards = document.querySelectorAll('.fabric-option-card');
+            cards.forEach(c => {
+                c.classList.remove('border-primary');
+                c.classList.add('border-outline-variant');
+            });
+            card.classList.add('border-primary');
+            card.classList.remove('border-outline-variant');
+            document.getElementById('selected-fabric-input').value = fabricName;
+
+            // Auto-trigger crochet specs if crochet fabric chosen
+            const crochetSection = document.getElementById('crochet-custom-section');
+            if (fabricName === 'Crochet Coton Bio') {
+                crochetSection.classList.remove('hidden');
+                document.getElementById('garment-type-select').value = "Robe ou Ensemble d'Apparat en Crochet d'Art";
+            } else {
+                crochetSection.classList.add('hidden');
+            }
+        }
+
+        // Dropdown change handler to show crochet section
+        const typeSelect = document.getElementById('garment-type-select');
+        if (typeSelect) {
+            typeSelect.addEventListener('change', (e) => {
+                const crochetSection = document.getElementById('crochet-custom-section');
+                if (e.target.value === "Robe ou Ensemble d'Apparat en Crochet d'Art") {
+                    crochetSection.classList.remove('hidden');
+                    // Select Crochet fabric card visually
+                    const cards = document.querySelectorAll('.fabric-option-card');
+                    cards.forEach((c, idx) => {
+                        if (idx === 3) { // Crochet Coton Bio card index
+                            selectFabric(c, 'Crochet Coton Bio');
+                        }
+                    });
+                } else {
+                    crochetSection.classList.add('hidden');
+                }
             });
         }
     </script>
