@@ -132,7 +132,7 @@ layout: null
         .underline-animate:hover::after {
             width: 100%;
         }
-        /* Anti-download selection protection */
+        /* Anti-download protection styles */
         .no-select {
             -webkit-user-select: none;
             -moz-user-select: none;
@@ -246,138 +246,229 @@ layout: null
             </div>
         </section>
 
-        <!-- E-Learning Online Training Module Section -->
-        <section class="py-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto border-t border-outline-variant/30" id="elearning-section">
-            <div class="mb-16 text-center md:text-left flex flex-col md:flex-row md:justify-between md:items-end gap-6">
-                <div>
-                    <span class="font-label-caps text-secondary text-[11px] tracking-[0.3em] uppercase block mb-2">PLATEFORME APPRENTISSAGE APPAREIL SÉCURISÉ</span>
-                    <h2 class="font-display-lg text-headline-md text-primary">Espace E-Learning &amp; Progression</h2>
-                    <p class="font-body-md text-on-surface-variant mt-4 max-w-2xl">
-                        🔒 <strong>Protection contre la copie</strong> : Les modules vidéo sont diffusés en flux sécurisé lecture seule. Le téléchargement et l'enregistrement d'écran sont désactivés.
-                    </p>
-                </div>
-                <!-- Student Progress Card -->
-                <div class="bg-surface border border-outline-variant p-6 rounded-lg w-full md:w-80 space-y-3">
-                    <div class="flex justify-between items-center text-xs font-label-caps">
-                        <span class="text-primary font-bold">VOTRE PROGRESSION</span>
-                        <span class="text-secondary font-bold" id="progress-percentage">0%</span>
-                    </div>
-                    <div class="w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
-                        <div class="h-full bg-secondary transition-all duration-500" id="progress-bar-fill" style="width: 0%;"></div>
-                    </div>
-                    <p class="text-[11px] text-on-surface-variant font-label-caps text-right" id="progress-text">0 de 4 cours validés</p>
-                </div>
-            </div>
-
-            <!-- Toast Warning for Locked Chapters -->
-            <div class="hidden bg-error-container text-on-error-container border border-error px-6 py-4 mb-6 rounded-lg flex justify-between items-center" id="lock-warning-toast">
-                <span class="text-sm font-medium flex items-center gap-2">
-                    <span class="material-symbols-outlined">lock</span> Cette leçon nécessite une inscription active. Veuillez cliquer sur le bouton d'inscription ci-dessous pour débloquer tout le cursus.
-                </span>
-                <button class="material-symbols-outlined hover:opacity-75" onclick="document.getElementById('lock-warning-toast').classList.add('hidden')">close</button>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-stretch">
-                <!-- Video player (Left) -->
-                <div class="lg:col-span-7 bg-black rounded-lg overflow-hidden flex flex-col justify-between aspect-video relative group border border-outline-variant/30 select-none" id="secure-video-player" oncontextmenu="return false;">
-                    <!-- Fake Video Content -->
-                    <div class="absolute inset-0 bg-cover bg-center opacity-65 transition-all duration-700" id="video-bg" style="background-image: url('assets/tailor_kanvo_detail.png'); filter: brightness(0.4);"></div>
-                    <div class="absolute inset-0 bg-black/60" id="video-lock-overlay"></div>
-
-                    <!-- Top Bar Info & Protection Indicator -->
-                    <div class="relative z-10 p-6 flex justify-between items-center">
-                        <span class="bg-secondary text-on-secondary text-[9px] font-label-caps py-1 px-3 rounded uppercase font-bold tracking-widest flex items-center gap-1">
-                            <span class="material-symbols-outlined text-[12px]">security</span> FLUX SÉCURISÉ LECTURE SEULE
+        <!-- Premium E-Learning Console Section -->
+        <section class="bg-stone-950 text-stone-100 py-32 px-margin-mobile md:px-margin-desktop border-t border-stone-800" id="elearning-section">
+            <div class="max-w-container-max mx-auto">
+                
+                <!-- Section Header with Progress Tracking -->
+                <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-16 pb-8 border-b border-stone-800">
+                    <div class="space-y-4">
+                        <span class="bg-secondary/20 text-secondary border border-secondary/30 text-[10px] font-label-caps px-3 py-1 tracking-widest uppercase rounded">
+                            Console E-Learning Sécurisée
                         </span>
-                        <span class="text-white/60 text-xs font-label-caps" id="current-chapter-num">CHAPITRE 1 / 4</span>
+                        <h2 class="font-display-lg text-headline-md text-white">Espace de Visionnage &amp; Cursus</h2>
+                        <p class="text-sm text-stone-400 max-w-xl">
+                            🔒 <strong>Diffusion protégée</strong> : Les leçons vidéo et les documents de cours sont cryptés, non téléchargeables et accessibles uniquement en lecture seule.
+                        </p>
                     </div>
 
-                    <!-- Lock/Play Overlay -->
-                    <div class="absolute inset-0 flex flex-col items-center justify-center cursor-pointer space-y-4" onclick="handlePlayerClick()">
-                        <div class="w-16 h-16 rounded-full bg-white/20 text-white flex items-center justify-center backdrop-blur-md transition-all scale-100 group-hover:scale-110 shadow-2xl" id="play-button-container">
-                            <span class="material-symbols-outlined text-[36px]" id="play-icon">lock</span>
+                    <!-- Sleek Progress Tracking Widget -->
+                    <div class="bg-stone-900 border border-stone-800 p-6 rounded-lg w-full lg:w-96 space-y-4 shadow-xl">
+                        <div class="flex justify-between items-center text-xs font-label-caps text-stone-300">
+                            <span>VOTRE STATUT : <span id="student-status-badge" class="text-amber-500 font-bold">NON INSCRIT</span></span>
+                            <span class="text-white font-bold text-sm" id="progress-percentage">0%</span>
                         </div>
-                        <p class="text-white font-label-caps text-[10px] tracking-widest uppercase bg-black/40 px-4 py-2 rounded" id="player-lock-msg">Inscrivez-vous pour débloquer cette vidéo</p>
-                    </div>
-
-                    <!-- Bottom Player Controls -->
-                    <div class="relative z-10 p-6 space-y-4">
-                        <h4 class="text-white font-display-lg text-lg" id="video-player-title">Cours 1 : Les bases du tricotage au Crochet d'Art Béninois</h4>
-                        <div class="space-y-2">
-                            <!-- Progress Bar -->
-                            <div class="w-full h-1 bg-white/30 rounded-full overflow-hidden cursor-pointer" id="progress-bar-container">
-                                <div class="w-0 h-full bg-secondary-container" id="video-progress"></div>
-                            </div>
-                            <div class="flex justify-between items-center text-xs text-white/60 font-label-caps">
-                                <span id="video-time">00:00 / 24:00</span>
-                                <span class="text-[9px] text-white/40 tracking-wider">TÉLÉCHARGEMENT DÉSACTIVÉ 🔒</span>
-                            </div>
+                        <div class="w-full h-2 bg-stone-950 rounded-full overflow-hidden">
+                            <div class="h-full bg-secondary transition-all duration-700" id="progress-bar-fill" style="width: 0%;"></div>
+                        </div>
+                        <div class="flex justify-between items-center text-[10px] font-label-caps text-stone-400">
+                            <span id="progress-text">0 de 4 leçons validées</span>
+                            <span class="flex items-center gap-1 text-secondary"><span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-ping"></span> Flux Actif</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Playlist/Chapters (Right) -->
-                <div class="lg:col-span-5 bg-surface border border-outline-variant p-6 rounded-lg flex flex-col justify-between">
-                    <div>
-                        <h3 class="font-label-caps text-label-caps text-primary border-b border-outline-variant/30 pb-4 mb-4 uppercase">Leçons du Cursus</h3>
-                        <div class="space-y-2" id="chapters-list">
-                            <!-- Chapter 1 (Locked by default) -->
-                            <div class="p-4 border border-outline-variant text-on-surface/50 bg-surface-container-low rounded cursor-pointer flex gap-4 items-center transition-all chapter-item" onclick="playChapter(1, 'Cours 1 : Les bases du tricotage au Crochet d\'Art Béninois', '24:00', 'assets/tailor_kanvo_detail.png', true)" id="chap-item-1">
-                                <span class="material-symbols-outlined text-on-surface-variant" id="chap-icon-1">lock</span>
-                                <div class="flex-1">
-                                    <div class="flex items-center gap-2">
-                                        <h4 class="text-xs font-bold uppercase font-label-caps">1. Introduction et Mailles de base</h4>
-                                        <span class="bg-amber-100 text-amber-800 text-[8px] px-1.5 py-0.5 rounded font-bold font-label-caps uppercase" id="badge-lock-1">Verrouillé</span>
-                                    </div>
-                                    <p class="text-xs text-on-surface-variant mt-1">Fil de coton bio, techniques manuelles</p>
-                                </div>
-                                <span class="text-xs text-on-surface-variant font-label-caps">24 min</span>
+                <!-- Toast Warning for Locked Chapters -->
+                <div class="hidden bg-stone-900 border-l-4 border-amber-500 text-stone-200 p-6 mb-8 rounded shadow-2xl flex justify-between items-center animate-fade-in" id="lock-warning-toast">
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-amber-500 text-3xl">lock</span>
+                        <div>
+                            <h4 class="font-label-caps text-xs text-white uppercase font-bold">Contenu Verrouillé</h4>
+                            <p class="text-xs text-stone-400 mt-1">Vous devez valider votre inscription ci-dessous pour débloquer cette leçon vidéo et les documents.</p>
+                        </div>
+                    </div>
+                    <button class="material-symbols-outlined hover:text-white text-stone-500" onclick="document.getElementById('lock-warning-toast').classList.add('hidden')">close</button>
+                </div>
+
+                <!-- Main Console Layout -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-stretch">
+                    
+                    <!-- Left Column: Video Screen & Lecture Details -->
+                    <div class="lg:col-span-8 space-y-8 flex flex-col justify-between">
+                        <!-- Custom Video Player Screen -->
+                        <div class="bg-stone-900 border border-stone-800 rounded-xl overflow-hidden aspect-video relative group select-none shadow-2xl" id="secure-video-player" oncontextmenu="return false;">
+                            <!-- Fake Video background image with brightness adjust -->
+                            <div class="absolute inset-0 bg-cover bg-center transition-all duration-700 opacity-50" id="video-bg" style="background-image: url('assets/tailor_kanvo_detail.png'); filter: brightness(0.35);"></div>
+                            <div class="absolute inset-0 bg-stone-950/70" id="video-lock-overlay"></div>
+
+                            <!-- Screen header info -->
+                            <div class="relative z-10 p-6 flex justify-between items-center">
+                                <span class="bg-black/60 text-stone-300 text-[9px] font-label-caps py-1 px-3 border border-stone-800 rounded uppercase font-bold tracking-widest flex items-center gap-1.5">
+                                    <span class="material-symbols-outlined text-[12px] text-secondary">shield</span> PROTECTION DES DROITS ACTIFS
+                                </span>
+                                <span class="text-stone-400 text-xs font-label-caps" id="current-chapter-num">CHAPITRE 1 / 4</span>
                             </div>
-                            <!-- Chapter 2 (Locked by default) -->
-                            <div class="p-4 border border-outline-variant text-on-surface/50 bg-surface-container-low rounded cursor-pointer flex gap-4 items-center transition-all chapter-item" onclick="playChapter(2, 'Cours 2 : Teinture naturelle végétale et préparation du fil', '32:15', 'assets/hero_benin_fashion.png', true)" id="chap-item-2">
-                                <span class="material-symbols-outlined text-on-surface-variant" id="chap-icon-2">lock</span>
-                                <div class="flex-1">
-                                    <div class="flex items-center gap-2">
-                                        <h4 class="text-xs font-bold uppercase font-label-caps">2. Teintures et pigments naturels</h4>
-                                        <span class="bg-amber-100 text-amber-800 text-[8px] px-1.5 py-0.5 rounded font-bold font-label-caps uppercase" id="badge-lock-2">Verrouillé</span>
-                                    </div>
-                                    <p class="text-xs text-on-surface-variant mt-1">Préparer l'indigo et les écorces d'arbres</p>
+
+                            <!-- Lock/Play Overlay Center -->
+                            <div class="absolute inset-0 flex flex-col items-center justify-center cursor-pointer space-y-4 z-20" onclick="handlePlayerClick()">
+                                <div class="w-20 h-20 rounded-full bg-white/10 border border-white/20 text-white flex items-center justify-center backdrop-blur-md transition-all duration-300 scale-100 group-hover:scale-105 shadow-2xl hover:bg-white/20" id="play-button-container">
+                                    <span class="material-symbols-outlined text-[44px] text-white" id="play-icon">lock</span>
                                 </div>
-                                <span class="text-xs text-on-surface-variant font-label-caps">32 min</span>
+                                <p class="text-stone-300 font-label-caps text-[9px] tracking-[0.2em] uppercase bg-black/60 border border-stone-800 px-4 py-2 rounded" id="player-lock-msg">
+                                    INSCRIPTION REQUISE POUR VISIONNER
+                                </p>
                             </div>
-                            <!-- Chapter 3 (Locked by default) -->
-                            <div class="p-4 border border-outline-variant text-on-surface/50 bg-surface-container-low rounded cursor-pointer flex gap-4 items-center transition-all chapter-item" onclick="playChapter(3, 'Cours 3 : Création de motifs géométriques et symboles royaux', '45:50', 'assets/collection_charcoal_kanvo.png', true)" id="chap-item-3">
-                                <span class="material-symbols-outlined text-on-surface-variant" id="chap-icon-3">lock</span>
-                                <div class="flex-1">
-                                    <div class="flex items-center gap-2">
-                                        <h4 class="text-xs font-bold uppercase font-label-caps">3. Motifs géométriques royaux</h4>
-                                        <span class="bg-amber-100 text-amber-800 text-[8px] px-1.5 py-0.5 rounded font-bold font-label-caps uppercase" id="badge-lock-3">Verrouillé</span>
+
+                            <!-- Custom control bar bottom -->
+                            <div class="relative z-10 p-6 bg-gradient-to-t from-stone-950 via-stone-950/80 to-transparent pt-16">
+                                <h4 class="text-white font-display-lg text-lg mb-4" id="video-player-title">Cours 1 : Les bases du tricotage au Crochet d'Art Béninois</h4>
+                                <div class="space-y-3">
+                                    <!-- Progress bar -->
+                                    <div class="w-full h-1 bg-stone-800 rounded-full overflow-hidden cursor-pointer" id="progress-bar-container">
+                                        <div class="w-0 h-full bg-secondary transition-all" id="video-progress"></div>
                                     </div>
-                                    <p class="text-xs text-on-surface-variant mt-1">Inspirés des tisseurs de l'ancien Dahomey</p>
+                                    <div class="flex justify-between items-center text-xs text-stone-400 font-label-caps">
+                                        <span id="video-time">00:00 / 24:00</span>
+                                        <span class="text-[9px] text-stone-500 tracking-widest uppercase">⚠️ TÉLÉCHARGEMENT &amp; COPIE INTERDITS</span>
+                                    </div>
                                 </div>
-                                <span class="text-xs text-on-surface-variant font-label-caps">45 min</span>
                             </div>
-                            <!-- Chapter 4 (Locked by default) -->
-                            <div class="p-4 border border-outline-variant text-on-surface/50 bg-surface-container-low rounded cursor-pointer flex gap-4 items-center transition-all chapter-item" onclick="playChapter(4, 'Cours 4 : Assemblage final et couture d\'une robe de prestige', '1:12:00', 'assets/collection_gold_silk.png', true)" id="chap-item-4">
-                                <span class="material-symbols-outlined text-on-surface-variant" id="chap-icon-4">lock</span>
-                                <div class="flex-1">
-                                    <div class="flex items-center gap-2">
-                                        <h4 class="text-xs font-bold uppercase font-label-caps">4. Assemblage d'une Robe de Prestige</h4>
-                                        <span class="bg-amber-100 text-amber-800 text-[8px] px-1.5 py-0.5 rounded font-bold font-label-caps uppercase" id="badge-lock-4">Verrouillé</span>
-                                    </div>
-                                    <p class="text-xs text-on-surface-variant mt-1">Raccordements de mailles invisibles et finitions</p>
+                        </div>
+
+                        <!-- Course description metadata -->
+                        <div class="bg-stone-900 border border-stone-800 p-8 rounded-xl space-y-6">
+                            <h3 class="font-headline-sm text-xl text-white">À propos de ce module</h3>
+                            <p class="text-stone-400 text-sm leading-relaxed" id="course-long-desc">
+                                Cette leçon d'introduction présente les outils fondamentaux, la sélection des fils de coton biologique béninois et les techniques manuelles pour structurer des pièces d'apparat souples et résistantes.
+                            </p>
+                            <div class="flex gap-8 border-t border-stone-800 pt-6">
+                                <div>
+                                    <span class="block text-[10px] font-label-caps text-stone-500">ENSEIGNANT</span>
+                                    <span class="text-sm font-bold text-white">Maître Calixte SIPI</span>
                                 </div>
-                                <span class="text-xs text-on-surface-variant font-label-caps">1h 12</span>
+                                <div>
+                                    <span class="block text-[10px] font-label-caps text-stone-500">NIVEAU</span>
+                                    <span class="text-sm font-bold text-white">Intermédiaire à Avancé</span>
+                                </div>
+                                <div>
+                                    <span class="block text-[10px] font-label-caps text-stone-500">ATELIER CIBLE</span>
+                                    <span class="text-sm font-bold text-white">Cotonou, Bénin</span>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="mt-8 border-t border-outline-variant/30 pt-6">
-                        <button class="w-full bg-primary text-on-primary py-4 font-label-caps text-label-caps tracking-widest hover:bg-neutral-800 transition-colors uppercase" id="enroll-button" onclick="enrollOnlineAcademy()">
-                            M'inscrire et débloquer les 4 cours
-                        </button>
+                    <!-- Right Column: Interactive Tab Workspace -->
+                    <div class="lg:col-span-4 bg-stone-900 border border-stone-800 rounded-xl p-6 flex flex-col justify-between shadow-2xl">
+                        <div>
+                            <!-- Tabs selection buttons -->
+                            <div class="grid grid-cols-3 gap-2 border-b border-stone-800 pb-4 mb-6">
+                                <button class="font-label-caps text-[10px] text-white border-b-2 border-secondary pb-2 tracking-wider" id="tab-lessons-btn" onclick="switchTab('lessons')">LEÇONS</button>
+                                <button class="font-label-caps text-[10px] text-stone-400 hover:text-white pb-2 tracking-wider" id="tab-resources-btn" onclick="switchTab('resources')">RESOURCES</button>
+                                <button class="font-label-caps text-[10px] text-stone-400 hover:text-white pb-2 tracking-wider" id="tab-support-btn" onclick="switchTab('support')">SUPPORT</button>
+                            </div>
+
+                            <!-- Tab 1 Content: Lessons List -->
+                            <div class="space-y-3" id="tab-content-lessons">
+                                <!-- Chapter 1 -->
+                                <div class="p-4 border border-stone-800 text-stone-400 bg-stone-950/40 rounded-lg cursor-pointer flex gap-4 items-center transition-all chapter-item" onclick="playChapter(1, 'Cours 1 : Les bases du tricotage au Crochet d\'Art Béninois', '24:00', 'assets/tailor_kanvo_detail.png', true, 'Cette leçon d\'introduction présente les outils fondamentaux, la sélection des fils de coton biologique béninois et les techniques manuelles pour structurer des pièces d\'apparat.')" id="chap-item-1">
+                                    <span class="material-symbols-outlined text-stone-500" id="chap-icon-1">lock</span>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-start">
+                                            <h4 class="text-xs font-bold uppercase text-white font-label-caps">1. Bases et Mailles</h4>
+                                            <span class="bg-stone-800 text-stone-400 text-[8px] px-2 py-0.5 rounded font-bold uppercase" id="badge-lock-1">Verrouillé</span>
+                                        </div>
+                                        <p class="text-[11px] text-stone-400 mt-1">Outils et fils de coton bio local</p>
+                                    </div>
+                                    <span class="text-xs text-stone-400 font-label-caps">24m</span>
+                                </div>
+                                <!-- Chapter 2 -->
+                                <div class="p-4 border border-stone-800 text-stone-400 bg-stone-950/40 rounded-lg cursor-pointer flex gap-4 items-center transition-all chapter-item" onclick="playChapter(2, 'Cours 2 : Teinture naturelle végétale et préparation du fil', '32:15', 'assets/hero_benin_fashion.png', true, 'Apprenez à concevoir et à fixer des pigments végétaux naturels tirés de la flore ouest-africaine pour teindre vos fils de coton avant confection.')" id="chap-item-2">
+                                    <span class="material-symbols-outlined text-stone-500" id="chap-icon-2">lock</span>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-start">
+                                            <h4 class="text-xs font-bold uppercase text-white font-label-caps">2. Teintures &amp; Indigo</h4>
+                                            <span class="bg-stone-800 text-stone-400 text-[8px] px-2 py-0.5 rounded font-bold uppercase" id="badge-lock-2">Verrouillé</span>
+                                        </div>
+                                        <p class="text-[11px] text-stone-400 mt-1">Préparer l'indigo végétal béninois</p>
+                                    </div>
+                                    <span class="text-xs text-stone-400 font-label-caps">32m</span>
+                                </div>
+                                <!-- Chapter 3 -->
+                                <div class="p-4 border border-stone-800 text-stone-400 bg-stone-950/40 rounded-lg cursor-pointer flex gap-4 items-center transition-all chapter-item" onclick="playChapter(3, 'Cours 3 : Création de motifs géométriques et symboles royaux', '45:50', 'assets/collection_charcoal_kanvo.png', true, 'Intégration de motifs complexes à forte charge culturelle et symbolique inspirés du royaume historique du Dahomey.')" id="chap-item-3">
+                                    <span class="material-symbols-outlined text-stone-500" id="chap-icon-3">lock</span>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-start">
+                                            <h4 class="text-xs font-bold uppercase text-white font-label-caps">3. Motifs Royaux</h4>
+                                            <span class="bg-stone-800 text-stone-400 text-[8px] px-2 py-0.5 rounded font-bold uppercase" id="badge-lock-3">Verrouillé</span>
+                                        </div>
+                                        <p class="text-[11px] text-stone-400 mt-1">Symbolisme et géométrie du Dahomey</p>
+                                    </div>
+                                    <span class="text-xs text-stone-400 font-label-caps">45m</span>
+                                </div>
+                                <!-- Chapter 4 -->
+                                <div class="p-4 border border-stone-800 text-stone-400 bg-stone-950/40 rounded-lg cursor-pointer flex gap-4 items-center transition-all chapter-item" onclick="playChapter(4, 'Cours 4 : Assemblage final et couture d\'une robe de prestige', '1:12:00', 'assets/collection_gold_silk.png', true, 'Techniques avancées d\'assemblage invisible des sections crochetées et raccordement à des pans de soie ou de laine d\'apparat.')" id="chap-item-4">
+                                    <span class="material-symbols-outlined text-stone-500" id="chap-icon-4">lock</span>
+                                    <div class="flex-1">
+                                        <div class="flex justify-between items-start">
+                                            <h4 class="text-xs font-bold uppercase text-white font-label-caps">4. Assemblage final</h4>
+                                            <span class="bg-stone-800 text-stone-400 text-[8px] px-2 py-0.5 rounded font-bold uppercase" id="badge-lock-4">Verrouillé</span>
+                                        </div>
+                                        <p class="text-[11px] text-stone-400 mt-1">Raccords et couture d'apparat</p>
+                                    </div>
+                                    <span class="text-xs text-stone-400 font-label-caps">1h12</span>
+                                </div>
+                            </div>
+
+                            <!-- Tab 2 Content: Resources List (PDF downloads) -->
+                            <div class="space-y-4 hidden" id="tab-content-resources">
+                                <p class="text-xs text-stone-400 leading-relaxed mb-4">🔒 Les ressources documentaires sont réservées et non téléchargeables localement pour des raisons de droits d'artisanat.</p>
+                                <!-- Doc 1 -->
+                                <div class="p-4 border border-stone-800 bg-stone-950/20 rounded-lg flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-stone-500">picture_as_pdf</span>
+                                        <div>
+                                            <h4 class="text-xs font-bold text-white uppercase font-label-caps">Fiche de mesures (PDF)</h4>
+                                            <p class="text-[10px] text-stone-400">1.4 Mo • Lecture seule</p>
+                                        </div>
+                                    </div>
+                                    <span class="material-symbols-outlined text-stone-500 text-sm" id="res-lock-1">lock</span>
+                                </div>
+                                <!-- Doc 2 -->
+                                <div class="p-4 border border-stone-800 bg-stone-950/20 rounded-lg flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined text-stone-500">grid_on</span>
+                                        <div>
+                                            <h4 class="text-xs font-bold text-white uppercase font-label-caps">Patron Crochet Top (PDF)</h4>
+                                            <p class="text-[10px] text-stone-400">8.2 Mo • Grille d'assemblage</p>
+                                        </div>
+                                    </div>
+                                    <span class="material-symbols-outlined text-stone-500 text-sm" id="res-lock-2">lock</span>
+                                </div>
+                            </div>
+
+                            <!-- Tab 3 Content: Support & FAQ -->
+                            <div class="space-y-4 hidden" id="tab-content-support">
+                                <div class="p-4 bg-stone-950/40 border border-stone-800 rounded-lg space-y-2">
+                                    <h4 class="text-xs font-bold text-white uppercase font-label-caps">Tutorat en direct</h4>
+                                    <p class="text-xs text-stone-400">Une session de visioconférence de 30 minutes avec un maître tailleur est disponible après déblocage complet du module.</p>
+                                </div>
+                                <div class="p-4 bg-stone-950/40 border border-stone-800 rounded-lg space-y-2">
+                                    <h4 class="text-xs font-bold text-white uppercase font-label-caps">Une question ?</h4>
+                                    <p class="text-xs text-stone-400">Contactez l'atelier directement par email à : <span class="text-secondary font-bold select-text">academie@rejustewenoumi.com</span></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Master Enrollment CTA Button -->
+                        <div class="mt-8 border-t border-stone-800 pt-6">
+                            <button class="w-full bg-primary text-on-primary py-4 font-label-caps text-label-caps tracking-widest hover:bg-neutral-800 transition-colors uppercase shadow-lg" id="enroll-button" onclick="enrollOnlineAcademy()">
+                                M'inscrire et débloquer les 4 cours
+                            </button>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </section>
     </main>
@@ -430,13 +521,14 @@ layout: null
             });
         }
 
-        // Global state
+        // Global State
         let isEnrolled = false;
         let isPlaying = false;
         let activeChapterIndex = 1;
         let completedChapters = []; // Empty by default
+        let activeTab = 'lessons';
 
-        // Disable right click on video player for protection
+        // Right click block for DRM protection
         const securePlayer = document.getElementById('secure-video-player');
         if (securePlayer) {
             securePlayer.addEventListener('contextmenu', (e) => {
@@ -445,11 +537,11 @@ layout: null
             });
         }
 
-        // Disable copy-paste and shortcuts
+        // Shortcut blocker
         document.addEventListener('keydown', (e) => {
             if ((e.ctrlKey && e.key === 's') || (e.ctrlKey && e.key === 'u')) {
                 e.preventDefault();
-                alert("🔒 Enregistrement de la page désactivé.");
+                alert("🔒 Protection MAS : Enregistrement et impression de la page désactivés.");
             }
         });
 
@@ -457,10 +549,30 @@ layout: null
             document.getElementById('elearning-section').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Handle clicking the player area
+        // Tab selection script
+        function switchTab(tabId) {
+            activeTab = tabId;
+            const tabs = ['lessons', 'resources', 'support'];
+            
+            tabs.forEach(t => {
+                const btn = document.getElementById(`tab-${t}-btn`);
+                const content = document.getElementById(`tab-content-${t}`);
+                
+                if (t === tabId) {
+                    btn.classList.add('text-white', 'border-b-2', 'border-secondary');
+                    btn.classList.remove('text-stone-400');
+                    content.classList.remove('hidden');
+                } else {
+                    btn.classList.remove('text-white', 'border-b-2', 'border-secondary');
+                    btn.classList.add('text-stone-400');
+                    content.classList.add('hidden');
+                }
+            });
+        }
+
+        // Play button handler
         function handlePlayerClick() {
             if (!isEnrolled) {
-                // Show lock warning
                 const toast = document.getElementById('lock-warning-toast');
                 toast.classList.remove('hidden');
                 toast.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -469,7 +581,6 @@ layout: null
             }
         }
 
-        // Fake E-Learning Video Player play state
         function togglePlayState() {
             if (!isEnrolled) return;
             
@@ -480,11 +591,11 @@ layout: null
             
             if (isPlaying) {
                 playIcon.innerText = "pause";
-                playContainer.classList.remove('scale-110');
+                playContainer.classList.remove('scale-105');
                 progress.style.transition = 'width 15s linear';
                 progress.style.width = '100%';
 
-                // Simulate video completion after some time
+                // Simulate video completion
                 setTimeout(() => {
                     if (isPlaying) {
                         completeLesson(activeChapterIndex);
@@ -496,12 +607,11 @@ layout: null
             }
         }
 
-        // Change simulated video chapter
-        function playChapter(index, title, duration, bgImage, isLocked) {
+        // Change course chapters
+        function playChapter(index, title, duration, bgImage, isLocked, desc) {
             const toast = document.getElementById('lock-warning-toast');
             
             if (isLocked && !isEnrolled) {
-                // Show locked error toast
                 toast.classList.remove('hidden');
                 toast.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 return;
@@ -510,23 +620,21 @@ layout: null
             toast.classList.add('hidden');
             activeChapterIndex = index;
 
-            // Update player UI
+            // Update UI player elements
             document.getElementById('video-player-title').innerText = title;
             document.getElementById('video-bg').style.backgroundImage = `url('${bgImage}')`;
             document.getElementById('video-time').innerText = `00:00 / ${duration}`;
             document.getElementById('video-progress').style.width = '0%';
             document.getElementById('current-chapter-num').innerText = `CHAPITRE ${index} / 4`;
+            document.getElementById('course-long-desc').innerText = desc;
             
-            // Set playing back to false
             isPlaying = false;
             document.getElementById('play-icon').innerText = "play_arrow";
 
-            // Mark lesson as read if they click it (and enrolled)
             if (isEnrolled && !completedChapters.includes(index)) {
                 completeLesson(index);
             }
 
-            // Update active state in playlist
             updatePlaylistUI();
         }
 
@@ -536,11 +644,10 @@ layout: null
                 const num = idx + 1;
                 const icon = document.getElementById(`chap-icon-${num}`);
                 
-                // Base classes clean-up
-                item.classList.remove('bg-secondary-container/20', 'border-secondary', 'border-outline-variant', 'text-on-surface/50');
+                item.classList.remove('bg-secondary-container/10', 'border-secondary', 'border-stone-850', 'text-stone-300');
                 
                 if (num === activeChapterIndex) {
-                    item.classList.add('bg-secondary-container/20', 'border-secondary', 'text-primary');
+                    item.classList.add('bg-secondary-container/10', 'border-secondary', 'text-white');
                     if (icon) {
                         if (isEnrolled) {
                             icon.innerText = isPlaying ? "pause_circle" : "play_circle";
@@ -548,92 +655,93 @@ layout: null
                             icon.innerText = "lock";
                         }
                         icon.classList.add('text-secondary');
-                        icon.classList.remove('text-on-surface-variant');
+                        icon.classList.remove('text-stone-500');
                     }
                 } else {
                     if (isEnrolled) {
-                        // Unlocked items
-                        item.classList.add('border-outline-variant', 'text-on-surface');
+                        item.classList.add('border-stone-800', 'text-stone-300');
                         if (icon) {
                             if (completedChapters.includes(num)) {
                                 icon.innerText = "check_circle";
-                                icon.classList.add('text-green-600');
-                                icon.classList.remove('text-on-surface-variant');
+                                icon.classList.add('text-green-500');
+                                icon.classList.remove('text-stone-500');
                             } else {
                                 icon.innerText = "play_arrow";
-                                icon.classList.add('text-on-surface-variant');
-                                icon.classList.remove('text-green-600');
+                                icon.classList.add('text-stone-500');
+                                icon.classList.remove('text-green-500');
                             }
                         }
                     } else {
-                        // Locked items
-                        item.classList.add('border-outline-variant', 'text-on-surface/50', 'bg-surface-container-low');
+                        item.classList.add('border-stone-850', 'text-stone-500');
                         if (icon) {
                             icon.innerText = "lock";
-                            icon.classList.add('text-on-surface-variant');
-                            icon.classList.remove('text-green-600');
+                            icon.classList.add('text-stone-500');
+                            icon.classList.remove('text-green-500');
                         }
                     }
                 }
             });
         }
 
-        // Simulate complete course chapter and update progression
         function completeLesson(index) {
             if (!completedChapters.includes(index)) {
                 completedChapters.push(index);
             }
             
-            // Calculate progress percentage
             const percentage = Math.round((completedChapters.length / 4) * 100);
             
-            // Update Progression Card
             document.getElementById('progress-percentage').innerText = `${percentage}%`;
             document.getElementById('progress-bar-fill').style.width = `${percentage}%`;
-            document.getElementById('progress-text').innerText = `${completedChapters.length} de 4 cours validés`;
+            document.getElementById('progress-text').innerText = `${completedChapters.length} de 4 leçons validées`;
 
             updatePlaylistUI();
         }
 
-        // Enrollment simulations - Unlocks everything
+        // Enrollment handler
         function enrollOnlineAcademy() {
             isEnrolled = true;
             document.getElementById('lock-warning-toast').classList.add('hidden');
             
-            // Remove filter and lock indicators from the video player
+            // Remove video overlay locks
             document.getElementById('video-lock-overlay').classList.add('hidden');
             document.getElementById('video-bg').style.filter = "none";
             document.getElementById('play-icon').innerText = "play_arrow";
             document.getElementById('player-lock-msg').classList.add('hidden');
 
-            // Turn all locks into play badges
+            // Unlock playlist items
             for (let i = 1; i <= 4; i++) {
-                const lockBadge = document.getElementById(`badge-lock-${i}`);
-                if (lockBadge) {
-                    lockBadge.innerText = "Disponible";
-                    lockBadge.classList.replace('bg-amber-100', 'bg-green-100');
-                    lockBadge.classList.replace('text-amber-800', 'text-green-800');
+                const badge = document.getElementById(`badge-lock-${i}`);
+                if (badge) {
+                    badge.innerText = "Débloqué";
+                    badge.classList.replace('bg-stone-800', 'bg-green-950');
+                    badge.classList.replace('text-stone-400', 'text-green-400');
                 }
                 const icon = document.getElementById(`chap-icon-${i}`);
                 if (icon) {
                     icon.innerText = "play_arrow";
                 }
-                const item = document.getElementById(`chap-item-${i}`);
-                if (item) {
-                    item.classList.remove('text-on-surface/50', 'bg-surface-container-low');
-                }
             }
-            
+
+            // Unlock PDF files
+            document.getElementById('res-lock-1').innerText = "cloud_download";
+            document.getElementById('res-lock-1').classList.replace('text-stone-500', 'text-secondary');
+            document.getElementById('res-lock-2').innerText = "cloud_download";
+            document.getElementById('res-lock-2').classList.replace('text-stone-500', 'text-secondary');
+
             // Change button state
             const enrollBtn = document.getElementById('enroll-button');
-            enrollBtn.innerText = "✓ Inscription Validée - 4 Cours Débloqués";
+            enrollBtn.innerText = "✓ Cursus déverrouillé";
             enrollBtn.disabled = true;
             enrollBtn.classList.replace('bg-primary', 'bg-secondary');
 
-            // Set active chapter 1 parameters
-            playChapter(1, 'Cours 1 : Les bases du tricotage au Crochet d\'Art Béninois', '24:00', 'assets/tailor_kanvo_detail.png', false);
+            // Update badge status
+            document.getElementById('student-status-badge').innerText = "MEMBRE INSCRIT";
+            document.getElementById('student-status-badge').classList.replace('text-amber-500', 'text-green-500');
 
-            alert("Félicitations ! Votre inscription est validée. Toutes les leçons vidéo sécurisées ont été débloquées avec succès.");
+            // Start lesson 1
+            playChapter(1, 'Cours 1 : Les bases du tricotage au Crochet d\'Art Béninois', '24:00', 'assets/tailor_kanvo_detail.png', false, 'Cette leçon d\'introduction présente les outils fondamentaux, la sélection des fils de coton biologique béninois et les techniques manuelles pour structurer des pièces d\'apparat.');
+
+            alert("Félicitations ! Votre inscription est validée. Toutes les ressources et vidéos de la Maison MAS sont débloquées.");
         }
     </script>
 </body>
