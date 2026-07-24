@@ -4,6 +4,16 @@ layout: null
 <!DOCTYPE html>
 <html class="light" lang="fr">
 <head>
+    <script>
+      (function() {
+        const originalWarn = console.warn;
+        console.warn = function(...args) {
+          if (args[0] && typeof args[0] === 'string' && args[0].includes('cdn.tailwindcss.com')) return;
+          originalWarn.apply(console, args);
+        };
+      })();
+    </script>
+    <link rel="icon" type="image/png" href="assets/app_showcase_mockup.png"/>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>MAS Stylisme | L'Application Progressive (PWA)</title>
